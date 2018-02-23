@@ -10,25 +10,26 @@ AWS.config.update({
     region         : process.env.S3_REGION
 });
 
+const headers = {
+    "Content-type" : "application/json; charset=UTF-8",
+    "Authorization": " Bearer " + process.env.ACCESS_TOKEN
+};
+
 // 送信処理
 let sendMessage = (text, content) => {
     let data = {
         //"replyToken": content.replyToken,
-        "to" : content.source.userId,
+        "to"        : content.source.userId,
         "messages"  : messageCreator.create(text)
     };
     let body = JSON.stringify(data);
-    let req = https.request({
+    let req  = https.request({
         hostname: "api.line.me",
         port    : 443,
         //path    : "/v2/bot/message/reply",
         path    : "/v2/bot/message/push",
         method  : "POST",
-        headers : {
-            "Content-Type"  : "application/json",
-            "Content-Length": Buffer.byteLength(body),
-            "Authorization" : "Bearer " + process.env.ACCESS_TOKEN
-        }
+        headers : headers
     });
     req.end(body, (err) => {
         err && console.log(err);
@@ -46,11 +47,8 @@ let uploadS3 = (content) => {
     const sendOptions = {
         host   : 'api.line.me',
         path   : '/v2/bot/message/'+ message.id +'/content',
-        headers: {
-            "Content-type" : "application/json; charset=UTF-8",
-            "Authorization": " Bearer " + process.env.ACCESS_TOKEN
-        },
-        method:'GET'
+        headers: headers,
+        method :'GET'
     };
     let img = [];
     sendMessage(progressMessage, content);
@@ -69,7 +67,7 @@ let uploadS3 = (content) => {
             };
             s3.putObject(params, function(err, data) {
                 if (err === null) {
-                    console.log('[debug] s3 put success -> ' + err);
+                    console.log('[debug] s3 put success.');
                     sendMessage(successMessage, content);
                 } else {
                     console.log('[debug] s3 put err -> ' + err);

@@ -6,7 +6,7 @@ const columns = [
         "actions": [{
             "type" : "message",
             "label": "詳細",
-            "text" : "メッセージ"
+            "text" : "料理_1"
         }]
     },
     {
@@ -16,7 +16,7 @@ const columns = [
         "actions": [{
             "type" : "message",
             "label": "詳細",
-            "text" : "メッセージ"
+            "text" : "料理_2"
         }]
     },
     {
@@ -26,7 +26,7 @@ const columns = [
         "actions": [{
             "type" : "message",
             "label": "詳細",
-            "text" : "メッセージ"
+            "text" : "料理_3"
         }]
     }
 ];
@@ -36,10 +36,24 @@ const template = {
     "columns": columns
 };
 
-exports.print = () => {
+const detail = [
+    "",
+    "料理1の詳細です",
+    "料理2の詳細です",
+    "料理3の詳細です",
+];
+
+exports.getList = () => {
     return [{
         "type"    : "template",
         "altText" : "料理一覧を表示",
         "template": template
+    }];
+};
+
+exports.getDetail = (index) => {
+    return [{
+        "type": "text",
+        "text": detail[index]
     }];
 };
