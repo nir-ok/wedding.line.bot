@@ -1,1 +1,3 @@
 .ssh/
+ec2/node/rootkey.json
+ec2/nginx_etc/.htpasswd
