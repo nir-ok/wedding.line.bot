@@ -1,3 +1,5 @@
 .ssh/
 ec2/node/rootkey.json
+ec2/node/conf.json
 ec2/nginx_etc/.htpasswd
+ec2/html/wedding/const.js
