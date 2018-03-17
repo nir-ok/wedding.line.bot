@@ -1,6 +1,5 @@
 const columns = [
     {
-        "thumbnailImageUrl": "https://www.kyounoryouri.jp/upfile/l_1179901246_7727.jpg",
         "title"  : "挙式まで",
         "text"   : "~ 12:00",
         "actions": [{
@@ -10,7 +9,6 @@ const columns = [
         }]
     },
     {
-        "thumbnailImageUrl": "https://www.kyounoryouri.jp/upfile/l_1179901246_7727.jpg",
         "title"  : "挙式",
         "text"   : "12:00 ~ 12:45",
         "actions": [{
@@ -20,7 +18,6 @@ const columns = [
         }]
     },
     {
-        "thumbnailImageUrl": "https://www.kyounoryouri.jp/upfile/l_1207104711_1302.jpg",
         "title"  : "披露宴",
         "text"   : "12:45 ~ 15:00",
         "actions": [{
