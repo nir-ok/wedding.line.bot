@@ -4,13 +4,12 @@ var fs     = require('fs');
 var http   = require('http');
 var conf   = require('./conf.json');
 var server = http.createServer();
-var s3     = new AWS.S3();
 
 // サーバ起動
 server.on('request', function(req, res) {
-  var stream = fs.createReadStream('index.html');
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  stream.pipe(res);
+    var stream = fs.createReadStream('index.html');
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    stream.pipe(res);
 });
 var io = require('socket.io').listen(server);
 server.listen(conf.port);
@@ -18,6 +17,7 @@ server.listen(conf.port);
 // AWS設定
 AWS.config.loadFromPath('./rootkey.json');
 AWS.config.update({ region: conf.region });
+var s3 = new AWS.S3();
 
 // ファイルリスト、タイマー
 var fileList = []; // ファイル名格納配列
@@ -80,6 +80,7 @@ function updateObjects(names) {
                 objects.push(data);
                 // すべて取得できたら終了
                 if (names.length === objects.length) {
+                    console.log('get Objects -> ' + objects.length);
                     onSuccess(objects);
                 }
             });
