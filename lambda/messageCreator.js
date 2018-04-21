@@ -1,6 +1,7 @@
 const cuisineMessage  = require("./messages/cuisineMessage.js");
 const scheduleMessage = require("./messages/scheduleMessage.js");
 const helpMessage     = require("./messages/helpMessage.js");
+const imageMessage    = require("./messages/imageMessage.js");
 
 exports.create = (text) => {
     // システムメッセージ対応
@@ -20,6 +21,8 @@ exports.create = (text) => {
             return cuisineMessage.getList();
         case "予定":
             return scheduleMessage.getList();
+        case "画像":
+            return imageMessage.print();
         case "ヘルプ":
         default:
             return helpMessage.print();
@@ -30,12 +33,5 @@ function systemMessage(text) {
     return [{
         "type": "text",
         "text": text
-    }];
-}
-
-function error() {
-    return [{
-        "type": "text",
-        "text": "エラーです！"
     }];
 }
