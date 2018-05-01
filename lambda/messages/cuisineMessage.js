@@ -1,53 +1,44 @@
 const columns = [
     {
-        "thumbnailImageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/appetizer.JPG",
-        "text"   : "前菜",
-        "actions": [{ "type" : "message", "label": "詳細", "text" : "料理_1" }]
+        "imageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/appetizer.JPG",
+        "action"  : { "type" : "message", "label": "詳細", "text" : "料理_1" }
     },
     {
-        "thumbnailImageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/soup.JPG",
-        "text"   : "汁物",
-        "actions": [{ "type" : "message", "label": "詳細", "text" : "料理_2" }]
+        "imageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/soup.JPG",
+        "action"  : { "type" : "message", "label": "詳細", "text" : "料理_2" }
     },
     {
-        "thumbnailImageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/no_image.png",
-        "text"   : "刺身",
-        "actions": [{ "type" : "message", "label": "詳細", "text" : "料理_3" }]
+        "imageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/no_image.png",
+        "action"  : { "type" : "message", "label": "詳細", "text" : "料理_3" }
     },
     {
-        "thumbnailImageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/no_image.png",
-        "text"   : "茶碗蒸し",
-        "actions": [{ "type" : "message", "label": "詳細", "text" : "料理_4" }]
+        "imageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/no_image.png",
+        "action"  : { "type" : "message", "label": "詳細", "text" : "料理_4" }
     },
     {
-        "thumbnailImageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/main.JPG",
-        "text"   : "肉",
-        "actions": [{ "type" : "message", "label": "詳細", "text" : "料理_5" }]
+        "imageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/main.JPG",
+        "action"  : { "type" : "message", "label": "詳細", "text" : "料理_5" }
     },
     {
-        "thumbnailImageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/salad.JPG",
-        "text"   : "副菜",
-        "actions": [{ "type" : "message", "label": "詳細", "text" : "料理_6" }]
+        "imageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/salad.JPG",
+        "action"  : { "type" : "message", "label": "詳細", "text" : "料理_6" }
     },
     {
-        "thumbnailImageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/fish.JPG",
-        "text"   : "魚",
-        "actions": [{ "type" : "message", "label": "詳細", "text" : "料理_7" }]
+        "imageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/fish2.JPG",
+        "action"  : { "type" : "message", "label": "詳細", "text" : "料理_7" }
     },
     {
-        "thumbnailImageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/soba.JPG",
-        "text"   : "そば",
-        "actions": [{ "type" : "message", "label": "詳細", "text" : "料理_8" }]
+        "imageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/soba.JPG",
+        "action"  : { "type" : "message", "label": "詳細", "text" : "料理_8" }
     },
     {
-        "thumbnailImageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/dessert.JPG",
-        "text"   : "デザート",
-        "actions": [{ "type" : "message", "label": "詳細", "text" : "料理_9" }]
+        "imageUrl": "https://s3-ap-northeast-1.amazonaws.com/ts-wedding-public/dessert.JPG",
+        "action"  : { "type" : "message", "label": "詳細", "text" : "料理_9" }
     }
 ];
 
 const template = {
-    "type"   : "carousel",
+    "type"   : "image_carousel",
     "columns": columns
 };
 
@@ -58,7 +49,7 @@ const detail = [
     "御造りの盛り合わせ",
     "茶碗蒸し",
     "国産牛ロースのグリル おろしポン酢ソース",
-    "サラダ",
+    "自家製ドレッシングのサラダ",
     "のど黒の杉板焼き",
     "茶そば",
     "ティラミス",

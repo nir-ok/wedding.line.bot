@@ -2,18 +2,22 @@ const cuisineMessage  = require("./messages/cuisineMessage.js");
 const scheduleMessage = require("./messages/scheduleMessage.js");
 const helpMessage     = require("./messages/helpMessage.js");
 const imageMessage    = require("./messages/imageMessage.js");
+const musicMessage    = require("./messages/musicMessage.js");
 
 exports.create = (text) => {
     // システムメッセージ対応
     let msg      = text.split('[system]');
     let detail   = text.split('料理_');
     let schedule = text.split('予定_');
+    let music    = text.split('曲_');
     if (msg.length === 2) {
         return systemMessage(msg[1]);
     } else if (detail.length === 2) {
         return cuisineMessage.getDetail(detail[1]);
     } else if (schedule.length === 2) {
         return scheduleMessage.getDetail(schedule[1]);
+    } else if (music.length === 2) {
+        return musicMessage.getDetail(music[1]);
     }
     // 通常メッセージ
     switch (text) {
@@ -21,6 +25,8 @@ exports.create = (text) => {
             return cuisineMessage.getList();
         case "予定":
             return scheduleMessage.getList();
+        case "曲":
+            return musicMessage.getList();
         case "画像":
             return imageMessage.print();
         case "ヘルプ":
